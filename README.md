@@ -1,4 +1,9 @@
 # HustleCon
 Esha Joshi, Python Selenium
+2016
 
-Python script to automate entering emails into the HustleCon webpage.
+Files:
+    hustleCon.py            Python script that automates entering emails into the HustleCon webpage.
+
+Build & Run Instructions:
+    python hustleCon.py <emails_file>.txt
