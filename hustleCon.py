@@ -13,13 +13,14 @@ def main():
    print argv
 
    emailsFile = open(argv[1], "r")
+   writeToFile = open(argv[2], "a")
 
    for email in emailsFile.readlines():
       incognitoBrowser = retrieveBrowser()
       submitEmail(incognitoBrowser, email)
       print(email),
-      with open('emails_used.txt', "a") as emailsUsedFile:
-         emailsUsedFile.write('\n' + email)
+      with writeToFile as emailsUsedFile:
+         emailsUsedFile.write(email)
       #incognitoBrowser.close()
 
 # Opens Chrome igcognito window
