@@ -20,7 +20,7 @@ def main():
          incognitoBrowser = retrieveBrowser()
          submitEmail(incognitoBrowser, email)
          print email,
-         writeToFile.write("\n" + email)
+         writeToFile.write(email)
          #incognitoBrowser.close()
    else:
       print 'Command line args: <read_from_file>.txt <write_to_file>.txt'
@@ -32,7 +32,8 @@ def retrieveBrowser():
    chromeOptions.add_argument("-incognito")
 
    browser = webdriver.Chrome(chrome_options=chromeOptions)
-   browser.get('http://prelaunch.hustlecon.com/?ref=b91966323e')
+   #browser.get('http://prelaunch.hustlecon.com/?ref=b91966323e')
+   browser.get('http://ambassadors.thehustle.co/?ref=6f7a0e3a95')
    return browser
 
 # Selects element by id, inputs email into text field, and simulates hitting ENTER
