@@ -12,16 +12,19 @@ from selenium.webdriver.support import expected_conditions as EC
 def main():
    print argv
 
-   emailsFile = open(argv[1], "r")
-   writeToFile = open(argv[2], "a")
+   if (len(argv) == 3):
+      emailsFile = open(argv[1], "r")
+      writeToFile = open(argv[2], "a")
 
-   for email in emailsFile.readlines():
-      incognitoBrowser = retrieveBrowser()
-      submitEmail(incognitoBrowser, email)
-      print(email),
-      with writeToFile as emailsUsedFile:
-         emailsUsedFile.write(email)
-      #incognitoBrowser.close()
+      for email in emailsFile.readlines():
+         incognitoBrowser = retrieveBrowser()
+         submitEmail(incognitoBrowser, email)
+         print email,
+         writeToFile.write("\n" + email)
+         #incognitoBrowser.close()
+   else:
+      print 'Command line args: <read_from_file>.txt <write_to_file>.txt'
+
 
 # Opens Chrome igcognito window
 def retrieveBrowser():
