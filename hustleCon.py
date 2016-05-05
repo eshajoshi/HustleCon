@@ -1,6 +1,7 @@
 # Esha Joshi
 # Emails list: 'emails.txt'
 # Selenium Python
+# Stoked for the conference
 
 from sys import *
 from selenium import webdriver
